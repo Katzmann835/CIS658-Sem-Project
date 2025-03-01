@@ -1,0 +1,14 @@
+<div id="<%= dom_id main_page %>">
+  <p>
+    <strong>Title:</strong>
+    <%= main_page.title %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= main_page.content %>
+  </p>
+
+  <%= image_tag (main_page.image) if main_page.image.attached? %>
+
+</div>
