@@ -1,0 +1,11 @@
+<% content_for :title, "New commenting" %>
+
+<h1>New commenting</h1>
+
+<%= render "form", commenting: @commenting %>
+
+<br>
+
+<div>
+  <%= link_to "Back to commentings", commentings_path %>
+</div>

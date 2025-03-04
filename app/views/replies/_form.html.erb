@@ -1,0 +1,37 @@
+<%= form_with(model: reply) do |form| %>
+  <% if reply.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+      <ul>
+        <% reply.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :reply, style: "display: block" %>
+    <%= form.textarea :reply %>
+  </div>
+
+  <div>
+    <%= form.label :main_page_id, style: "display: block" %>
+    <%= form.number_field :main_page_id %>
+  </div>
+
+  <div>
+    <%= form.label :commenting_id, style: "display: block" %>
+    <%= form.number_field :commenting_id %>
+  </div>
+
+  <div>
+    <%= form.label :parent_id, style: "display: block" %>
+    <%= form.number_field :parent_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
