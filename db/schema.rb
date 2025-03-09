@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_04_004931) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_09_225800) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -53,6 +53,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_04_004931) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "main_page_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["main_page_id"], name: "index_likes_on_main_page_id"
+  end
+
   create_table "main_pages", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -71,4 +78,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_04_004931) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "main_pages"
 end

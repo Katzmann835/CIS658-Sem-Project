@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :replies
   resources :commentings
   resources :main_pages
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :main_pages do
     resources :commentings
     resources :replies
+    resources :likes
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

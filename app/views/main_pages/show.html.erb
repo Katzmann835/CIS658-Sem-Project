@@ -7,4 +7,6 @@
   <%= link_to "Back to main pages", main_pages_path %>
 
   <%= button_to "Destroy this main page", @main_page, method: :delete %>
+  <%= button_to "Like", main_pages_likes_path(@like), method: :post %>
+  <p><%= @main_page.likes.count %> <%= (@main_page.likes.count) == 1 ? 'Like' : 'Likes'%> </p>
 </div>
